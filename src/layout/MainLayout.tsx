@@ -5,14 +5,9 @@ import Navbar from "./Navbar";
 
 const MainLayout = () => {
   return (
-    <div
-      className='h-[100vh] grid'
-      style={{
-        gridTemplateColumns: "1fr 3fr",
-      }}
-    >
+    <div className='h-[100vh] flex'>
       <Menu />
-      <div className='bg-green-300 flex flex-col'>
+      <div className='bg-green-300 flex-1 flex flex-col'>
         <Navbar />
 
         <Breadcumps />

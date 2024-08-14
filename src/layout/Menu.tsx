@@ -1,7 +1,7 @@
 
 const Menu = () => {
   return (
-    <ul className='menu bg-base-200 rounded-box w-56'>
+    <ul className=' hidden lg:block menu bg-base-200 rounded-box w-56'>
       <li>
         <a>
           <svg
