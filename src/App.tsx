@@ -1,5 +1,6 @@
 import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useAccount } from "./hooks";
+import { MainLayout } from "./layout";
 import { OrganizationPage } from "./pages";
 
 const App = () => {
@@ -10,11 +11,21 @@ const App = () => {
     <Routes>
       {isAuth ? (
         <>
+          <Route element={<MainLayout />}>
+            <Route
+              path='/'
+              element={<Link to='/organization'>sdfasdfsadfsadfasdf</Link>}
+            />
+            <Route path='/organization' element={<OrganizationPage />} />
+          </Route>
           <Route
-            path='/'
-            element={<Link to={"/organization"}>Organization</Link>}
+            path='*'
+            element={
+              <>
+                404<Link to={"/"}>Volver</Link>
+              </>
+            }
           />
-          <Route path='/organization' element={<OrganizationPage />} />
         </>
       ) : (
         <>

@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import Subtitle from "../../components/Subtitle";
 import Title from "../../components/Title";
+import useBreadcump from "../../hooks/useBreadcumps";
 
 type Organization = { id: number; name: string; url: string };
 
@@ -54,6 +55,15 @@ const data: Organization[] = [
 ];
 
 const OrganizationPage: FC = () => {
+  const { setItems } = useBreadcump();
+
+  useEffect(() => {
+    setItems([
+      { title: "Organizaciones", to: "/login" },
+      { title: "Miembros" },
+    ]);
+  }, [setItems]);
+
   return (
     <div className='flex flex-col gap-2 m-10'>
       <Title>Organizaciones Marítimas</Title>
